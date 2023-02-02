@@ -16,10 +16,13 @@ public class Weapon : Collidable
   private float spinSpeed = 2.0f;
   private float spinSpeedMultiplier = 2.0f;
 
+  private Camera _cameraMain;
+  
   
   
   protected override void Start()
   {
+    _cameraMain = Camera.main;
     base.Start();
     spriteRenderer = GetComponent<SpriteRenderer>();
   }
@@ -91,8 +94,8 @@ public class Weapon : Collidable
   private void Throw()
   {
     // Set the position of the weapon to the mouse pointer
-    Vector3 throwDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-    transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) - throwDirection;
+    Vector3 throwDirection = (_cameraMain.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+    transform.position = _cameraMain.ScreenToWorldPoint(Input.mousePosition) - throwDirection;
   }
   
   private void ReturnToPlayer()
