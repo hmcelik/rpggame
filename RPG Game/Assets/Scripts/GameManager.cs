@@ -48,13 +48,17 @@ public class GameManager : MonoBehaviour
 
   public void LoadState(Scene s, LoadSceneMode mode)
   {
-    if (PlayerPrefs.HasKey("SaveState"))
+    if (!PlayerPrefs.HasKey("SaveState"))
     {
       return;
     }
     string[] data = PlayerPrefs.GetString("SaveState").Split("|");
-    gold = int.Parse(data[1]);
-    experience = int.Parse(data[2]);
-    Debug.Log("LoadState");
+    if (data.Length >= 3)
+    {
+      gold = int.Parse(data[1]);
+      experience = int.Parse(data[2]);
+      Debug.Log("LoadState");
+    }
   }
+
 }

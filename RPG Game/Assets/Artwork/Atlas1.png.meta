@@ -1322,6 +1322,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sword_0
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 225
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9a237e39aa444f0bacbd6d014a6568
+      internalID: -573962225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword_1
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 225
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeab6892341b43aeaf186b61e66f7e7
+      internalID: 481180934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword_2
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 193
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b355750d05254b66ba11c7e9adf8bdd
+      internalID: -417951397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9d4b399d4a649ccbadb723443878d2
+      internalID: 1646692677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1338,6 +1422,7 @@ TextureImporter:
       crate_bottom_1: 1003097509
       chest_0: 1417497467
       flag_1: -710796965
+      sword_2: -417951397
       wall_0: 1634279673
       wall_pipe_0: -822129869
       base_8: 960315142
@@ -1348,6 +1433,7 @@ TextureImporter:
       chest_empty_0: -1215808767
       pillar_bottom_1: -854092274
       crate_top_0: 284691908
+      sword_0: -573962225
       stair_down_1: -812420597
       flag_3: 362419687
       floor_wall_0: 1901621414
@@ -1362,6 +1448,7 @@ TextureImporter:
       wall_top_0: 1665540855
       base_1: -532328198
       chest_1: 1495252848
+      enemy_0: 1646692677
       floor_wall_2: 1227356132
       fountain_lower_0: 2082205905
       base_9: 1015898672
@@ -1380,6 +1467,7 @@ TextureImporter:
       base_11: -361146723
       stair_up_0: -1255954151
       wall_top_1: -5304827
+      sword_1: 481180934
       chest_open_1: -183008647
       base_2: -1459594416
       fountain_top_0: -874690867
