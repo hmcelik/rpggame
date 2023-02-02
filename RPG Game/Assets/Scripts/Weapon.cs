@@ -5,16 +5,16 @@ using UnityEngine;
 public class Weapon : Collidable
 {
   public int damagePoint = 1;
-  public float pushForce = 2.0f;
+  public float pushForce = 10.0f;
   
   public int weaponLevel = 0;
   private SpriteRenderer spriteRenderer;
-  
+  private Animator anim;
   private float cooldown = 0.3f;
   private float lastSwing;
-  private bool isThrown = false;
-  private float spinSpeed = 2.0f;
-  private float spinSpeedMultiplier = 2.0f;
+private float lastThrow;
+private float throwCooldown = 2.5f;
+
 
   private Camera _cameraMain;
   
@@ -25,6 +25,7 @@ public class Weapon : Collidable
     _cameraMain = Camera.main;
     base.Start();
     spriteRenderer = GetComponent<SpriteRenderer>();
+    anim = GetComponent<Animator>();
   }
 
   protected override void Update()
@@ -39,33 +40,14 @@ public class Weapon : Collidable
       }
     }
     
-    if (Input.GetMouseButtonDown(0))
-    {
-      isThrown = true;
-      spinSpeed *= spinSpeedMultiplier;
-    }
-    
-    if (Input.GetMouseButtonUp(0))
-    {
-      spinSpeed /= spinSpeedMultiplier;
-    }
-    
     if (Input.GetKeyDown(KeyCode.T))
     {
-      if (isThrown)
+      if (Time.time - lastThrow > throwCooldown)
       {
-        isThrown = false;
-        ReturnToPlayer();
+        lastThrow = Time.time;
+        Throw(); 
       }
-      else
-      {
-        Throw();
-      }
-    }
-    
-    if (isThrown)
-    {
-      transform.Rotate(0, 0, spinSpeed);
+  
     }
   }
   
@@ -75,32 +57,22 @@ public class Weapon : Collidable
     {
       Damage dmg = new Damage()
       {
-        damageAmount = damagePoint * (int)(isThrown ? spinSpeedMultiplier : 1),
         origin = transform.position,
         pushForce = pushForce
       };
       coll.SendMessage("ReceiveDamage", dmg);
-      isThrown = false;
-      ReturnToPlayer();
     }
   }
   
   private void Swing()
   {
-    // Trigger animation for swinging the sword
-    Debug.Log("Swing");
+    anim.SetTrigger("Swing");
   }
 
   private void Throw()
   {
-    // Set the position of the weapon to the mouse pointer
-    Vector3 throwDirection = (_cameraMain.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-    transform.position = _cameraMain.ScreenToWorldPoint(Input.mousePosition) - throwDirection;
+anim.SetTrigger("Throw");
   }
   
-  private void ReturnToPlayer()
-  {
-    // Return the weapon back to the player
-    transform.position = Player.instance.transform.position;
-  }
+  
 }

@@ -1093,6 +1093,7 @@ GameObject:
   - component: {fileID: 845703144}
   - component: {fileID: 845703146}
   - component: {fileID: 845703145}
+  - component: {fileID: 845703147}
   m_Layer: 0
   m_Name: sword_2
   m_TagString: Untagged
@@ -1179,12 +1180,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca2e0427c7b04f5bac8a1ebf1cb281c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   damagePoint: 1
   pushForce: 2
   weaponLevel: 0
-  cooldown: 0.3
-  spinSpeed: 100
-  damageMultiplier: 1
 --- !u!61 &845703146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1192,7 +1204,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845703142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1211,6 +1223,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07651901, y: 0.30365285}
   m_EdgeRadius: 0
+--- !u!95 &845703147
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845703142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9fcee5b58a73f45d7877ae8b4730acad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &872913052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519356994}
   - component: {fileID: 1519356995}
+  - component: {fileID: 1519356996}
   m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
@@ -1578,6 +1611,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.095526084, y: 0.08915516}
   m_EdgeRadius: 0
+--- !u!114 &1519356996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519356993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a9f34cefe6d421c935659e32cd517f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 0
+  pushForce: 0
 --- !u!1 &1598500412
 GameObject:
   m_ObjectHideFlags: 0
@@ -12801,7 +12862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1959383105
 BoxCollider2D:
   m_ObjectHideFlags: 0
